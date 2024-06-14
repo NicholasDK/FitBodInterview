@@ -1,0 +1,8 @@
+Sep 26 2020,Deadlift,6,45
+Sep 26 2020,Deadlift,6,30
+Sep 22 2020,Barbell Bench Press,8,45
+Sep 22 2020,Barbell Bench Press,8,30
+Sep 21 2020,Back Squat,8,135
+Apr 21 2023,Barbell Curl,1,100
+Apr 21 2023,Barbell Curl,1,30
+Sep 26 2024,Deadlift,1,45

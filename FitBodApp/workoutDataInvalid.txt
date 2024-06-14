@@ -1,0 +1,7 @@
+Oct 11 2020,Back Squat,10,45
+Oct 11 2020,Back Squat,10,135
+Oct 11 2020,Back Squat,3,185
+Oct 11 2020,Back Squat,6,245
+Oct 11 2020,Back Squat,6,245
+Oct 11 2020,Back Squat,6,245
+Oct 11 2020,Back Squat,6,

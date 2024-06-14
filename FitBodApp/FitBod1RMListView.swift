@@ -23,22 +23,28 @@ struct FitBod1RMListView: View {
     @ObservedObject var viewModel = FitBodViewModel()
     
     var body: some View {
-        List(viewModel.repMaxes) { max in
-            FitBodExerciseRMView(set: max)
-                .listRowInsets(EdgeInsets())
-                .listRowBackground(Color.clear)
-                .contentShape(Rectangle())
-                .padding(.vertical, 12)
-                .onTapGesture {
-                    delegate?.didSelectExercise(exerciseRMViewModel: viewModel.chartViewModelForExercise(max: max))
-                }
-        }
-        .scrollContentBackground(.hidden)
-        .onAppear {
-            guard let filepath = Bundle.main.path(forResource: "workoutData", ofType: "txt") else {
-                return
+        VStack {
+            List(viewModel.repMaxes) { max in
+                FitBodExerciseRMView(set: max)
+                    .listRowInsets(EdgeInsets())
+                    .listRowBackground(Color.clear)
+                    .contentShape(Rectangle())
+                    .padding(.vertical, 12)
+                    .onTapGesture {
+                        delegate?.didSelectExercise(exerciseRMViewModel: viewModel.chartViewModelForExercise(max: max))
+                    }
             }
-            viewModel.readWorkoutData(filePath: filepath)
+            .scrollContentBackground(.hidden)
+            .onAppear {
+                guard let filepath = Bundle.main.path(forResource: "workoutData", ofType: "txt") else {
+                    viewModel.error = FitBodErrorParseError.badInputFile
+                    return
+                }
+                viewModel.readWorkoutData(filePath: filepath)
+            }
+            if let error = viewModel.error {
+                Text(error.localizedDescription)
+            }
         }
     }
     
