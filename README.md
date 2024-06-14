@@ -10,6 +10,8 @@
 
 5.  Extra: Added ability to edit range of display for chart
 
+6.  Mockup is dark background - which is how it looks in dark mode, otherwise it'll be light background
+
 
 
  
